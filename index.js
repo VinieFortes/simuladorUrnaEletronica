@@ -144,8 +144,20 @@ function teclaLaranja(){
    location.reload(true);
 }
 
-function teclaVerde(){
-
+async function teclaVerde() {
+   divNun.style.visibility = "hidden";
+   divNome.style.visibility = "hidden";
+   divPart.style.visibility = "hidden";
+   divVice.style.visibility = "hidden";
+   nulo.style.visibility = "visible";
+   brancoNulo.innerHTML = "VOTO CONFIRMADO"
+   brancoNulo2.innerHTML = ''
+   divImg.style.visibility = "hidden";
+   const audio = new Audio('src/som.mp3');
+   await audio.play();
+   const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
+   await delay(3000)
+   location.reload(true);
 }
 
 function mostraCand(){
