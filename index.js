@@ -138,6 +138,7 @@ function teclaBranca(){
    nulo.style.visibility = "visible";
    brancoNulo.innerHTML = "VOTO EM BRANCO"
    brancoNulo2.innerHTML = ''
+   imgCand.src = ('');
 }
 function teclaLaranja(){
    location.reload(true);
