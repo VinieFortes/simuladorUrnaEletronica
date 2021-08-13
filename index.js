@@ -29,6 +29,8 @@ const brancoNulo = document.getElementById("branco");
 const brancoNulo2 = document.getElementById("numeroErrado");
 
 
+
+
 function tecla1(){
    console.log(num01display.value)
    if (num01display.value === undefined){
