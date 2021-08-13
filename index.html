@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Urna eletronica</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+<div id="body">
+    <header><h1>Simulador de Urna Eletronica</h1></header>
+    <div id="conteiner-visor">
+        <div id="imagem" style="display: flex; flex-direction: column; border: black; border: groove; left: 42%; position: absolute; width: min-content; height: min-content; line-height: 0.3 ; visibility: hidden">
+            <img  id="imgCand" src="" width="125px" style="" alt="Foto do candidato">
+            <p style="text-align: center">PRESIDENTE</p>
+        </div>
+        <div id="visor" style="line-height: 0.3; float: left">
+            <p>SEU VOTO PARA:</p>
+            <p id="tipo-candidato" style="text-align: center; margin-right: 100px; font-weight: bold">PRESIDENTE</p>
+
+            <div id="numero-candidato" style="display: flex; flex-direction: row; text-align: center; align-items: center">
+                <p>Número: </p>
+                <p id="num-cand-01" style="; margin-left: 10px; font-size: 30px" value="0"></p>
+                <p id="num-cand-02" style=" font-size: 30px" value="0"></p>
+            </div>
+
+            <div style="display: flex; align-items: center">
+                <p style="float: left">Nome:</p>
+                <p id="nome_cand" style="float: right ; margin-left: 10px; font-size: 20px; font-weight: bold"></p>
+            </div>
+            <div style="display: flex; align-items: center">
+                <p style="float: left">Partido:</p>
+                <p id="partido_cand" style="float: right ; margin-left: 10px; font-size: 20px; font-weight: bold"></p>
+            </div>
+            <div style="display: flex; align-items: center">
+            <p style="float: left">Vice-presidente:</p>
+            <p id="vice_cand" style="float: right ; margin-left: 10px; font-size: 20px; font-weight: bold"></p>
+            </div>
+
+            <p id="numero-errado" style="visibility: hidden">NÚMERO ERRADO</p>
+            <div id="footer">
+                <hr>
+                <span style="font-weight: bold">Aperte a tecla:</span>
+                <p style="margin-left: 10px">Tecle VERDE para confirmar.</p>
+                <p style="margin-left: 15px">Tecle LARANJA para corrigir.</p>
+            </div>
+
+
+        </div>
+        <div id="conteiner-teclado">
+        <div id="banner">
+            <img src="src/brasao.png" style="float: left" width="50px">
+            <p style="float: right">JUSTIÇA ELEITORAL</p>
+        </div>
+        <div id="teclado">
+            <table id="tabela">
+                <tr>
+                    <td id='tecla1' onclick="tecla1()"><input type='button' value='1'/></td>
+                    <td id='tecla2' onclick="tecla2()"><input type='button' value='2'/></td>
+                    <td id='tecla3' onclick="tecla3()"><input type='button' value='3'/></td>
+                </tr>
+                <tr>
+                    <td id='tecla4' onclick="tecla4()"><input type='button' value='4'/></td>
+                    <td id='tecla5' onclick="tecla5()"><input type='button' value='5'/></td>
+                    <td id='tecla6' onclick="tecla6()"><input type='button' value='6'/></td>
+                </tr>
+                <tr>
+                    <td id='tecla7' onclick="tecla7()"><input  type='button' value='7'/></td>
+                    <td id='tecla8' onclick="tecla8()"><input type='button' value='8'/></td>
+                    <td id='tecla9' onclick="tecla9()"><input type='button' value='9'/></td>
+                </tr>
+                <tr>
+                    <td style="visibility: hidden"></td>
+                    <td id='tecla0' onclick="tecla0()"><input type='button' value='0'/></td>
+                    <td style="visibility: hidden"></td>
+                </tr>
+                <tr>
+                    <td id='teclaBranca' style="background: #fff"><input style="background-color: white; color: black"  type='button' value='BRANCO'/></td>
+                    <td id='teclaLaranja' onclick="teclaLaranja()" style="background: #ffa500"><input style="background-color: #ffa500; color: black" type='button' value='CORRIGE' /></td>
+                    <td id='teclaVerde' style="background: #00fc00"><input style="background-color: #00fc00; color: black"  type='button' value='CONFIRMA'/></td>
+                </tr>
+            </table>
+        </div>
+        </div>
+    </div>
+</div>
+</body>
+<script src="index.js"></script>
+</html>

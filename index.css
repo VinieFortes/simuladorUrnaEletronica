@@ -1,0 +1,64 @@
+#conteiner-visor{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: min-content;
+    border: black;
+    border: groove;
+    background-color: gray;
+    padding: 5px;
+    border-radius: 12px;
+
+}#conteiner-teclado{
+     justify-content: center;
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-left: 20px;
+     font-size: 20px;
+    font-weight: bold;
+ }
+
+#teclado{
+    width: 500px;
+    height: 330px;
+    border: white;
+    border: groove;
+    background-color: black;
+}
+#visor{
+    width: 720px;
+    height: 400px;
+    display: flex;
+    background-color: white;
+    flex-direction: column;
+    border: black;
+    border: groove;
+    padding-left: 10px;
+}
+td{
+    border: white;
+    border: groove;
+    color: white;
+    height: 55px;
+    background-color: black;
+    font-weight: bold;
+    font-size: 20px;
+}
+#footer{
+    height: fit-content;
+    line-height: 0.3;
+}
+hr { display: block; height: 1px;
+    border: 0; border-top: 1px solid black;
+    margin: 1em 0; padding: 0; }
+
+input{
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
