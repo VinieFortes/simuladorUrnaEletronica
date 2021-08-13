@@ -204,8 +204,16 @@ function mostraCand(){
          divImg.style.visibility = "visible";
          imgCand.src = ("src/daciolo.jpg");
          return;
+
+      case 24:
+         nomeCand.innerHTML = "Guilherme Itatiaia";
+         partidoCand.innerHTML = "Comedores de casadas";
+         vice.innerHTML = "TinTim";
+         divImg.style.visibility = "visible";
+         imgCand.src = ("src/itatiaia.jpeg");
+         return;
    }
-   if(numCand !== 13 || numCand !== 17 || numCand !== 30 || numCand !== 50 || numCand !== 51){
+   if(numCand !== 13 || numCand !== 17 || numCand !== 24 || numCand !== 30 || numCand !== 50 || numCand !== 51){
       nulo.style.visibility = "visible";
    } else {
       nulo.style.visibility = "hidden";
