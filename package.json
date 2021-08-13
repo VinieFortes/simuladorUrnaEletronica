@@ -12,5 +12,6 @@
     "projeto"
   ],
   "author": "Vinicius Fortes",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {}
 }
