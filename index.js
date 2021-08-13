@@ -178,8 +178,32 @@ function mostraCand(){
          divImg.style.visibility = "visible";
          imgCand.src = ("src/bolsonaro.jpg");
          return;
+
+      case 30:
+         nomeCand.innerHTML = "João Amoêdo";
+         partidoCand.innerHTML = "NOVO";
+         vice.innerHTML = "hristian Lohbauer";
+         divImg.style.visibility = "visible";
+         imgCand.src = ("src/amoedo.jpg");
+         return;
+
+      case 50:
+         nomeCand.innerHTML = "Guilherme Boulos";
+         partidoCand.innerHTML = "PSOL";
+         vice.innerHTML = "Ricardo Nunes";
+         divImg.style.visibility = "visible";
+         imgCand.src = ("src/boulos.jpg");
+         return;
+
+      case 51:
+         nomeCand.innerHTML = "Cabo Daciolo";
+         partidoCand.innerHTML = "Patriotas";
+         vice.innerHTML = "Suelene Balduino";
+         divImg.style.visibility = "visible";
+         imgCand.src = ("src/daciolo.jpg");
+         return;
    }
-   if(numCand !== 13 || numCand !== 17){
+   if(numCand !== 13 || numCand !== 17 || numCand !== 30 || numCand !== 50 || numCand !== 51){
       nulo.style.visibility = "visible";
    } else {
       nulo.style.visibility = "hidden";
