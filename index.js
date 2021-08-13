@@ -18,6 +18,16 @@ const vice = document.getElementById("vice_cand");
 const divImg = document.getElementById("imagem");
 const imgCand = document.getElementById("imgCand");
 
+const nulo = document.getElementById("nulo");
+
+const divNun = document.getElementById("numero-candidato");
+const divNome = document.getElementById("nome-candidato");
+const divPart = document.getElementById("partido-candidato");
+const divVice = document.getElementById("vice-candidato");
+
+const brancoNulo = document.getElementById("branco");
+const brancoNulo2 = document.getElementById("numeroErrado");
+
 
 function tecla1(){
    console.log(num01display.value)
@@ -121,20 +131,16 @@ function tecla0(){
    }
 }
 function teclaBranca(){
-
+   divNun.style.visibility = "hidden";
+   divNome.style.visibility = "hidden";
+   divPart.style.visibility = "hidden";
+   divVice.style.visibility = "hidden";
+   nulo.style.visibility = "visible";
+   brancoNulo.innerHTML = "VOTO EM BRANCO"
+   brancoNulo2.innerHTML = ''
 }
 function teclaLaranja(){
-   if (num01display.value !== undefined){
-      num01display.value = 0
-      num01display.innerHTML = num01display.value = ''
-   }if (num02display.value !== undefined){
-      num02display.value = 0
-      num02display.innerHTML = num02display.value = ''
-   }
-   nomeCand.innerHTML = '';
-   partidoCand.innerHTML = '';
-   vice.innerHTML = '';
-   divImg.style.visibility = "hidden";
+   location.reload(true);
 }
 
 function teclaVerde(){
@@ -143,7 +149,7 @@ function teclaVerde(){
 
 function mostraCand(){
    const numCand = parseInt(num01display.value + '' + num02display.value);
-   switch (numCand){
+   switch (numCand) {
       case 13:
          nomeCand.innerHTML = "Luiz Inacio Lula da Silva";
          partidoCand.innerHTML = "PT";
@@ -159,5 +165,10 @@ function mostraCand(){
          divImg.style.visibility = "visible";
          imgCand.src = ("src/bolsonaro.jpg");
          return;
+   }
+   if(numCand !== 13 || numCand !== 17){
+      nulo.style.visibility = "visible";
+   } else {
+      nulo.style.visibility = "hidden";
    }
 }

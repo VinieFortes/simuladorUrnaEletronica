@@ -8,7 +8,7 @@
 </head>
 <body>
 <div id="body">
-    <header><h1>Simulador de Urna Eletronicaaa</h1></header>
+    <header><h1>Simulador de Urna Eletronica</h1></header>
     <div id="conteiner-visor">
         <div id="imagem" style="display: flex; flex-direction: column; border: black; border: groove; left: 42%; position: absolute; width: min-content; height: min-content; line-height: 0.3 ; visibility: hidden">
             <img  id="imgCand" src="" width="125px" style="" alt="Foto do candidato">
@@ -24,20 +24,24 @@
                 <p id="num-cand-02" style=" font-size: 30px" value="0"></p>
             </div>
 
-            <div style="display: flex; align-items: center">
+            <div id="nome-candidato" style="display: flex; align-items: center">
                 <p style="float: left">Nome:</p>
                 <p id="nome_cand" style="float: right ; margin-left: 10px; font-size: 20px; font-weight: bold"></p>
             </div>
-            <div style="display: flex; align-items: center">
+            <div id="partido-candidato" style="display: flex; align-items: center">
                 <p style="float: left">Partido:</p>
                 <p id="partido_cand" style="float: right ; margin-left: 10px; font-size: 20px; font-weight: bold"></p>
             </div>
-            <div style="display: flex; align-items: center">
+            <div id="vice-candidato" style="display: flex; align-items: center">
             <p style="float: left">Vice-presidente:</p>
             <p id="vice_cand" style="float: right ; margin-left: 10px; font-size: 20px; font-weight: bold"></p>
             </div>
 
-            <p id="numero-errado" style="visibility: hidden">NÚMERO ERRADO</p>
+            <div id="nulo">
+                <p id="numeroErrado">NÚMERO ERRADO</p>
+                <h1 id="branco">VOTO NULO</h1>
+            </div>
+
             <div id="footer">
                 <hr>
                 <span style="font-weight: bold">Aperte a tecla:</span>
@@ -75,7 +79,7 @@
                     <td style="visibility: hidden"></td>
                 </tr>
                 <tr>
-                    <td id='teclaBranca' style="background: #fff"><input style="background-color: white; color: black"  type='button' value='BRANCO'/></td>
+                    <td id='teclaBranca' onclick="teclaBranca()" style="background: #fff"><input style="background-color: white; color: black"  type='button' value='BRANCO'/></td>
                     <td id='teclaLaranja' onclick="teclaLaranja()" style="background: #ffa500"><input style="background-color: #ffa500; color: black" type='button' value='CORRIGE' /></td>
                     <td id='teclaVerde' style="background: #00fc00"><input style="background-color: #00fc00; color: black"  type='button' value='CONFIRMA'/></td>
                 </tr>

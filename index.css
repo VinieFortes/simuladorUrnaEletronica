@@ -3,7 +3,8 @@
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: min-content;
+    width: fit-content;
+    height: fit-content;
     border: black;
     border: groove;
     background-color: gray;
@@ -18,7 +19,7 @@
      align-items: center;
      margin-left: 20px;
      font-size: 20px;
-    font-weight: bold;
+     font-weight: bold;
  }
 
 #teclado{
@@ -30,7 +31,7 @@
 }
 #visor{
     width: 720px;
-    height: 400px;
+    height: 500px;
     display: flex;
     background-color: white;
     flex-direction: column;
@@ -49,7 +50,7 @@ td{
 }
 #footer{
     height: fit-content;
-    line-height: 0.3;
+    line-height: 0.2;
 }
 hr { display: block; height: 1px;
     border: 0; border-top: 1px solid black;
@@ -61,4 +62,13 @@ input{
     color: white;
     font-size: 30px;
     font-weight: bold;
+}
+#nulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 25px;
+    visibility: hidden;
 }
