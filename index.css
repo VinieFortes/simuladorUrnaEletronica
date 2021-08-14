@@ -53,6 +53,7 @@ td{
     border: white;
     border: groove;
     color: white;
+    width: 100px;
     height: 55px;
     background-color: black;
     font-weight: bold;
