@@ -57,7 +57,7 @@ td{
     font-size: 20px;
 }
 #footer{
-    margin-top: 120px;
+    margin-top: 80px;
     line-height: 0.2;
     height: min-content;
 }
@@ -73,6 +73,7 @@ input{
     font-weight: bold;
 }
 #nulo{
+    margin-top: 50px;
     font-weight: bold;
     visibility: visible;
 }
