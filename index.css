@@ -57,10 +57,9 @@ td{
     font-size: 20px;
 }
 #footer{
-    margin-top: 90px;
-    width: 700px;
-    position: absolute;
+    margin-top: 120px;
     line-height: 0.2;
+    height: min-content;
 }
 hr { display: block; height: 1px;
     border: 0; border-top: 1px solid black;
