@@ -89,3 +89,14 @@ input{
     justify-content: center;
     margin-bottom: 5px;
 }
+#imagem {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    position: absolute;
+    margin-top: 150px;
+    margin-left: 520px;
+    border: black;
+    border: groove;
+    line-height: 0.3;
+}
