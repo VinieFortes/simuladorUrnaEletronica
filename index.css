@@ -72,10 +72,6 @@ input{
     font-weight: bold;
 }
 #nulo{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     font-weight: bold;
     font-size: 25px;
     visibility: hidden;
