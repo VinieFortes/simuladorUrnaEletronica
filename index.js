@@ -31,7 +31,6 @@ const brancoNulo2 = document.getElementById("numeroErrado");
 
 var contVotos = 0;
 
-
 function tecla1(){
    console.log(num01display.value);
    if (num01display.value === undefined){
@@ -228,12 +227,12 @@ function mostraCand(){
    }
 }
 function pass(nomecand, numcand){
+   if(isNaN(numcand)) numcand = -1;
       const para = document.createElement("p");
       const node = document.createTextNode(numcand + " " +nomecand);
       para.appendChild(node);
       const element = document.getElementById("div1");
       element.appendChild(para);
-
 }
 function clear(){
    num01display.value = undefined
