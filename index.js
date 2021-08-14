@@ -162,7 +162,8 @@ async function teclaVerde() {
    const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
    await delay(3000)
    contVotos++
-   pass(nomeCand.innerHTML)
+   const numCand = parseInt(num01display.value + '' + num02display.value);
+   pass(nomeCand.innerHTML, numCand)
    clear()
 }
 
@@ -226,9 +227,9 @@ function mostraCand(){
       nulo.style.visibility = "hidden";
    }
 }
-function pass(nomecand){
+function pass(nomecand, numcand){
       const para = document.createElement("p");
-      const node = document.createTextNode(nomecand);
+      const node = document.createTextNode(numcand + " " +nomecand);
       para.appendChild(node);
       const element = document.getElementById("div1");
       element.appendChild(para);
