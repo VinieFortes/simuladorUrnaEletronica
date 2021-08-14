@@ -1,9 +1,6 @@
 body{
     background-color: darkslategray;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center
+
 }
 header{
     text-align: center;
@@ -11,7 +8,6 @@ header{
     border-radius: 12px;
     background-color: darkolivegreen;
     padding: 10px;
-    width: 100%;
     margin-bottom: 10px;
 }
 #conteiner-visor{
@@ -19,8 +15,6 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    width: fit-content;
-    height: fit-content;
     border: black;
     border: groove;
     background-color: gray;
