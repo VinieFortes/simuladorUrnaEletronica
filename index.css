@@ -1,14 +1,7 @@
-@media only screen and (max-width: 1024px) {
-    #body{
-        background-color: red;
-    }
-}
 #body{
     background-color: darkslategray;
     display: flex;
-    height: 100%;
     flex-direction: column;
-    align-items: center;
 }
 header{
     text-align: center;
@@ -16,6 +9,7 @@ header{
     border-radius: 12px;
     background-color: darkolivegreen;
     padding: 10px;
+    align-items: center;
     margin-bottom: 10px;
 }
 #conteiner-visor{
