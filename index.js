@@ -214,7 +214,7 @@ function mostraCand(){
          partidoCand.innerHTML = "PSDB";
          vice.innerHTML = "Ana Amélia";
          divImg.style.visibility = "visible";
-         imgCand.src = ("src/alkimim.png");
+         imgCand.src = ("src/geraldo.png");
          return;
 
       case 50:
