@@ -10,6 +10,7 @@ header{
     border-radius: 12px;
     background-color: darkolivegreen;
     padding: 10px;
+    width: 100%;
     margin-bottom: 10px;
 }
 #conteiner-visor{
