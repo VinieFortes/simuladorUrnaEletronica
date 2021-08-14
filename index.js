@@ -226,9 +226,16 @@ function mostraCand(){
       nulo.style.visibility = "hidden";
    }
 }
+
+
 function pass(nomecand, numcand){
    if(isNaN(numcand)) numcand = -1;
       const para = document.createElement("p");
+      para.style.textAlign = "center"
+      para.style.color = "white";
+      para.style.border = "darkolivegreen solid";
+      para.style.borderRadius = "6px";
+      para.style.backgroundColor = "darkolivegreen";
       const node = document.createTextNode(numcand + " " +nomecand);
       para.appendChild(node);
       const element = document.getElementById("div1");
