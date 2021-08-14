@@ -75,7 +75,7 @@ input{
 #nulo{
     margin-top: 50px;
     font-weight: bold;
-    visibility: visible;
+    visibility: hidden;
 }
 #banner{
     display: flex;
