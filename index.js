@@ -10,14 +10,15 @@ const t9 = document.getElementById("tecla9");
 const t0 = document.getElementById("tecla0");
 
 const num01display = document.getElementById("num-cand-01");
+num01display.value = undefined;
 const num02display = document.getElementById("num-cand-02");
+num02display.value = undefined;
 
 const nomeCand = document.getElementById("nome_cand");
 const partidoCand = document.getElementById("partido_cand");
 const vice = document.getElementById("vice_cand");
 const divImg = document.getElementById("imagem");
 const imgCand = document.getElementById("imgCand");
-
 const nulo = document.getElementById("nulo");
 
 const divNun = document.getElementById("numero-candidato");
@@ -28,107 +29,107 @@ const divVice = document.getElementById("vice-candidato");
 const brancoNulo = document.getElementById("branco");
 const brancoNulo2 = document.getElementById("numeroErrado");
 
-
+var contVotos = 0;
 
 
 function tecla1(){
-   console.log(num01display.value)
+   console.log(num01display.value);
    if (num01display.value === undefined){
       num01display.value = 1
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 1
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla2(){
    if (num01display.value === undefined){
       num01display.value = 2
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 2
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla3(){
    if (num01display.value === undefined){
       num01display.value = 3
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 3
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla4(){
    if (num01display.value === undefined){
       num01display.value = 4
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 4
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla5(){
    if (num01display.value === undefined){
       num01display.value = 5
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 5
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla6(){
    if (num01display.value === undefined){
       num01display.value = 6
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 6
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla7(){
    if (num01display.value === undefined){
       num01display.value = 7
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 7
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla8(){
    if (num01display.value === undefined){
       num01display.value = 8
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 8
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla9(){
    if (num01display.value === undefined){
       num01display.value = 9
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 9
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
 function tecla0(){
    if (num01display.value === undefined){
       num01display.value = 0
-      num01display.innerHTML = num01display.value.toString()
+      num01display.innerHTML = num01display.value
    } else if (num02display.value === undefined){
       num02display.value = 0
-      num02display.innerHTML = num02display.value.toString()
+      num02display.innerHTML = num02display.value
       mostraCand()
    }
 }
@@ -141,9 +142,10 @@ function teclaBranca(){
    brancoNulo.innerHTML = "VOTO EM BRANCO"
    brancoNulo2.innerHTML = ''
    divImg.style.visibility = "hidden";
+   nomeCand.innerHTML = 'Branco';
 }
 function teclaLaranja(){
-   location.reload(true);
+   clear()
 }
 
 async function teclaVerde() {
@@ -159,7 +161,9 @@ async function teclaVerde() {
    await audio.play();
    const delay = ms => new Promise(resolve => setTimeout(resolve, ms))
    await delay(3000)
-   location.reload(true);
+   contVotos++
+   pass(nomeCand.innerHTML)
+   clear()
 }
 
 function mostraCand(){
@@ -215,7 +219,36 @@ function mostraCand(){
    }
    if(numCand !== 13 || numCand !== 17 || numCand !== 24 || numCand !== 30 || numCand !== 50 || numCand !== 51){
       nulo.style.visibility = "visible";
+      brancoNulo.innerHTML = "VOTO NULO";
+      brancoNulo2.innerHTML = "NÚMERO ERRADO";
+      nomeCand.innerHTML = "Nulo";
    } else {
       nulo.style.visibility = "hidden";
    }
+}
+function pass(nomecand){
+      const para = document.createElement("p");
+      const node = document.createTextNode(nomecand);
+      para.appendChild(node);
+      const element = document.getElementById("div1");
+      element.appendChild(para);
+
+}
+function clear(){
+   num01display.value = undefined
+   num02display.value = undefined
+   num01display.innerHTML = ''
+   num02display.innerHTML = ''
+
+   nomeCand.innerHTML = '';
+   partidoCand.innerHTML = '';
+   vice.innerHTML = '';
+   imgCand.src = ('');
+
+   divNun.style.visibility = "visible";
+   divNome.style.visibility = "visible";
+   divPart.style.visibility = "visible";
+   divVice.style.visibility = "visible";
+   divImg.style.visibility = "hidden";
+   nulo.style.visibility = "hidden";
 }
