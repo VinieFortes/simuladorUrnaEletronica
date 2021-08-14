@@ -94,6 +94,7 @@ input{
     align-items: center;
     width: fit-content;
     margin-right: 5px;
+    visibility: hidden;
     float: right;
     border: black;
     border: groove;
