@@ -73,8 +73,7 @@ input{
 }
 #nulo{
     font-weight: bold;
-    font-size: 25px;
-    visibility: hidden;
+    visibility: visible;
 }
 #banner{
     display: flex;
