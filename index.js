@@ -169,6 +169,14 @@ async function teclaVerde() {
 function mostraCand(){
    const numCand = parseInt(num01display.value + '' + num02display.value);
    switch (numCand) {
+
+      case 12:
+         nomeCand.innerHTML = "Ciro Gomes";
+         partidoCand.innerHTML = "PDT";
+         vice.innerHTML = "Kátia Abreu";
+         divImg.style.visibility = "visible";
+         imgCand.src = ("src/ciro.png");
+         return;
       case 13:
          nomeCand.innerHTML = "Luiz Inacio Lula da Silva";
          partidoCand.innerHTML = "PT";
@@ -185,12 +193,28 @@ function mostraCand(){
          imgCand.src = ("src/bolsonaro.jpg");
          return;
 
+      case 18:
+         nomeCand.innerHTML = "Marina Silva";
+         partidoCand.innerHTML = "Rede";
+         vice.innerHTML = "Eduardo Jorge";
+         divImg.style.visibility = "visible";
+         imgCand.src = ("src/marina.png");
+         return;
+
       case 30:
          nomeCand.innerHTML = "João Amoêdo";
          partidoCand.innerHTML = "NOVO";
          vice.innerHTML = "hristian Lohbauer";
          divImg.style.visibility = "visible";
          imgCand.src = ("src/amoedo.jpg");
+         return;
+
+      case 45:
+         nomeCand.innerHTML = "Geraldo Alckmim";
+         partidoCand.innerHTML = "PSDB";
+         vice.innerHTML = "Ana Amélia";
+         divImg.style.visibility = "visible";
+         imgCand.src = ("src/alkimim.png");
          return;
 
       case 50:
@@ -211,13 +235,13 @@ function mostraCand(){
 
       case 24:
          nomeCand.innerHTML = "Guilherme Itatiaia";
-         partidoCand.innerHTML = "Comedores de casadas";
+         partidoCand.innerHTML = "das casadas";
          vice.innerHTML = "TinTim";
          divImg.style.visibility = "visible";
          imgCand.src = ("src/itatiaia.jpeg");
          return;
    }
-   if(numCand !== 13 || numCand !== 17 || numCand !== 24 || numCand !== 30 || numCand !== 50 || numCand !== 51){
+   if(numCand !== 12 || numCand !== 13 || numCand !== 17 || numCand !== 18 ||numCand !== 24 || numCand !== 30 ||  numCand !== 45 || numCand !== 50 || numCand !== 51){
       nulo.style.visibility = "visible";
       brancoNulo.innerHTML = "VOTO NULO";
       brancoNulo2.innerHTML = "NÚMERO ERRADO";
