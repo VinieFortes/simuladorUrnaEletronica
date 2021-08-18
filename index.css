@@ -117,3 +117,16 @@ input{
     text-align: center
 }
 
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: darkolivegreen;
+    border-radius: 10px;
+}
+
