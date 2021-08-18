@@ -46,7 +46,7 @@ header{
     border: groove;
     padding-left: 10px;
 }
-td{
+.tecla{
     border: white;
     border: groove;
     color: white;
@@ -97,3 +97,23 @@ input{
     border: groove;
     line-height: 0.3;
 }
+#clear{
+    border-radius: 48px;
+    width: min-content;
+    margin: 0 auto;
+    background-color: red;
+    color: white;
+    font-weight: bold;
+    border: none;
+    visibility: hidden;
+}
+.td_bd{
+    color: white;
+    border: darkolivegreen solid;
+    border-radius: 12px;
+    padding: 2px;
+    background-color: darkolivegreen;
+    font-size: 20px;
+    text-align: center
+}
+

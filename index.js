@@ -1,14 +1,3 @@
-const t1 = document.getElementById("tecla1");
-const t2 = document.getElementById("tecla2");
-const t3 = document.getElementById("tecla3");
-const t4 = document.getElementById("tecla4");
-const t5 = document.getElementById("tecla5");
-const t6 = document.getElementById("tecla6");
-const t7 = document.getElementById("tecla7");
-const t8 = document.getElementById("tecla8");
-const t9 = document.getElementById("tecla9");
-const t0 = document.getElementById("tecla0");
-
 const num01display = document.getElementById("num-cand-01");
 num01display.value = undefined;
 const num02display = document.getElementById("num-cand-02");
@@ -28,6 +17,8 @@ const divVice = document.getElementById("vice-candidato");
 
 const brancoNulo = document.getElementById("branco");
 const brancoNulo2 = document.getElementById("numeroErrado");
+
+const bntClearBD = document.getElementById("clear");
 
 var db = openDatabase('votos_db', '1.0', 'Banco teste', 2 * 1024 * 1024);
 db.transaction(function (tx){
@@ -171,12 +162,11 @@ async function teclaVerde() {
    const numCand = parseInt(num01display.value + '' + num02display.value);
    var nomeCandidato = nomeCand.innerHTML;
    var partidoCandidato = partidoCand.innerHTML;
-   console.log(numCand)
    db.transaction(function (tx){
       tx.executeSql('INSERT INTO candidatos_bd (nome,numero,partido) VALUES(?,?,?)', [nomeCandidato,numCand,partidoCandidato])
    })
-
    clear()
+   showBD()
 }
 
 function mostraCand(){
@@ -266,24 +256,23 @@ function mostraCand(){
 
 
 function showBD(){
+   var table = document.getElementById("bd");
    db.transaction(function (tx){
       tx.executeSql('SELECT * FROM candidatos_bd', [], function (tx,resultado){
          var rows = resultado.rows;
-         for(var i =0; i < rows.length; i++){
-            const para = document.createElement("p");
-            const node = document.createTextNode(rows[i].partido +" "+ parseInt(rows[i].numero) +" "+rows[i].nome);
-            para.appendChild(node);
-            const element = document.getElementById("div1");
-            element.appendChild(para);
-            para.style.textAlign = "center"
-            para.style.color = "white";
-            para.style.border = "darkolivegreen solid";
-            para.style.borderRadius = "6px";
-            para.style.backgroundColor = "darkolivegreen";
+         var tr = '';
+         for(var i =0; i < rows.length; i++) {
+            tr += '<tr>';
+            tr += '<td class="td_bd">' + rows[i].partido + '</td>';
+            tr += '<td class="td_bd">' + rows[i].numero + '</td>';
+            tr += '<td class="td_bd">' + rows[i].nome + '</td>';
          }
+         table.innerHTML = tr;
+         if(rows.length > 0) bntClearBD.style.visibility = 'visible';
       });
    },null);
 }
+
 
 function clear(){
    num01display.value = undefined
@@ -302,4 +291,11 @@ function clear(){
    divVice.style.visibility = "visible";
    divImg.style.visibility = "hidden";
    nulo.style.visibility = "hidden";
+}
+
+function clearBD(){
+   db.transaction(function (tx){
+      tx.executeSql('DROP TABLE candidatos_bd')
+   })
+   document.location.reload(true);
 }
