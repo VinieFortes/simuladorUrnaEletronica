@@ -29,6 +29,13 @@ const divVice = document.getElementById("vice-candidato");
 const brancoNulo = document.getElementById("branco");
 const brancoNulo2 = document.getElementById("numeroErrado");
 
+var db = openDatabase('votos_db', '1.0', 'Banco teste', 2 * 1024 * 1024);
+db.transaction(function (tx){
+   tx.executeSql('CREATE TABLE candidatos_bd (nome TEXT,numero INTEGER,partido TEXT)')
+})
+
+showBD()
+
 var contVotos = 0;
 
 function tecla1(){
@@ -162,7 +169,13 @@ async function teclaVerde() {
    await delay(3000)
    contVotos++
    const numCand = parseInt(num01display.value + '' + num02display.value);
-   pass(nomeCand.innerHTML, numCand)
+   var nomeCandidato = nomeCand.innerHTML;
+   var partidoCandidato = partidoCand.innerHTML;
+   console.log(numCand)
+   db.transaction(function (tx){
+      tx.executeSql('INSERT INTO candidatos_bd (nome,numero,partido) VALUES(?,?,?)', [nomeCandidato,numCand,partidoCandidato])
+   })
+
    clear()
 }
 
@@ -252,19 +265,26 @@ function mostraCand(){
 }
 
 
-function pass(nomecand, numcand){
-   if(isNaN(numcand)) numcand = -1;
-      const para = document.createElement("p");
-      para.style.textAlign = "center"
-      para.style.color = "white";
-      para.style.border = "darkolivegreen solid";
-      para.style.borderRadius = "6px";
-      para.style.backgroundColor = "darkolivegreen";
-      const node = document.createTextNode(numcand + " " +nomecand);
-      para.appendChild(node);
-      const element = document.getElementById("div1");
-      element.appendChild(para);
+function showBD(){
+   db.transaction(function (tx){
+      tx.executeSql('SELECT * FROM candidatos_bd', [], function (tx,resultado){
+         var rows = resultado.rows;
+         for(var i =0; i < rows.length; i++){
+            const para = document.createElement("p");
+            const node = document.createTextNode(rows[i].partido +" "+ parseInt(rows[i].numero) +" "+rows[i].nome);
+            para.appendChild(node);
+            const element = document.getElementById("div1");
+            element.appendChild(para);
+            para.style.textAlign = "center"
+            para.style.color = "white";
+            para.style.border = "darkolivegreen solid";
+            para.style.borderRadius = "6px";
+            para.style.backgroundColor = "darkolivegreen";
+         }
+      });
+   },null);
 }
+
 function clear(){
    num01display.value = undefined
    num02display.value = undefined
